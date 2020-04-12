@@ -82,7 +82,10 @@ def addPlayer(request):
 
     else:
         form = PlayerForm()
-    return render(request,'newPlayer.html')
+    if request.user.is_authenticated:
+        return render(request,'newPlayer.html')
+    else:
+            return redirect("/login")
 
 
 def history(request):
