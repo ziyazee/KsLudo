@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<br>
+<div class="row container">
+	<div class="col s12 m8 l4 offset-m2 offset-l4">
+		<div class="card">
+
+			<div class="card-action grey darken-4 white-text">
+                <center>	<h3>New match</h3></center>
+			</div>
+            <!-- {{ludo}} -->
+            <!-- {% for values in ludo %}
+            {{values.PlayerName}}
+             {% endfor %} -->
+			<div class="card-content">
+                <form method="Post" class="post-form"enctype="multipart/form-data">
+                   
+                    {% csrf_token %}
+                <div class="form-field">
+                    <label for="id_First">Winner</label>
+                    <select name="First" id="id_First">
+                        {% for values in form.First %}
+                            {{values}}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="id_Second">Runner up</label>
+                    <select name="Second" id="id_Second">
+                        {% for values in form.Second %}
+                            {{values}}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="id_Third">Third</label>
+                    <select name="Third" id="id_Third">
+                        {% for values in form.Third %}
+                            {{values}}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="id_Fourth">Fourth</label>
+                    <select name="Fourth" id="id_Fourth">
+                        {% for values in form.Fourth %}
+                            {{values}}
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="row">
+                    <div class="col s7 m6">
+				        <div class="form-field ">
+					        <button type="submit" class="btn-large waves-effect waves-dark grey darken-4" name="one" style="width:100%;">Add more</button>
+                        </div>
+                    </div>
+                    <div class="col s5 m6">
+				        <div class="form-field ">
+					        <button type="submit" class="btn-large waves-effect waves-dark grey darken-4" style="width:100%;">Done</button>
+                        </div>
+                    </div>
+                </div><br>
+                </form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    
+$(document).ready(function(){
+$('select').formSelect();
+});
+</script>
+{% endblock %}

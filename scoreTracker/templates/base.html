@@ -1,0 +1,43 @@
+<html>
+    <head>  
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+    <body class=" grey lighten-3">
+        <nav class="grey darken-4"> <!-- navbar content here  --> 
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo center">K.S</a>
+            <ul id="slide-out" class="sidenav">
+                <li>
+                    <div class="user-view" style="height: 200px;">
+                        <div class="background">
+                            <img style="max-width:100%;" src="https://lh3.googleusercontent.com/W2Js02fUIrbqwNgPEWoRVoNSeGazglauauizZ4ZkcMTvISuG3n0t-YfV51Sh95IkyXtA=s360-rw">
+                        </div>
+                    </div>
+                </li>
+                <li><a href="{% url 'home' %}" class="waves-effect" ><i class="material-icons ">home</i>Home</a></li>
+
+                <li><a href="{% url 'addPlayer' %}" class="waves-effect" ><i class="material-icons ">add</i>Add Player</a></li>
+                <li><a href="{% url 'addMatch' %}" class="waves-effect" ><i class="material-icons ">add</i>Add a match result</a></li>
+                <li><a href="{% url 'history' %}" class="waves-effect" ><i class="material-icons ">assignment</i>Matches history</a></li>
+            </ul>
+        </nav>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems, options);
+            });
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+            }); 
+        </script>
+
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>

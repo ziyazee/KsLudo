@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+  #table-4 tr:nth-child(2){
+    color:#c62828;
+    font-size: 25px;
+    font-weight: bold;
+}
+ #table-4 tr:nth-child(3){
+    /* background:green; */
+    color:#005005;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#table-4 tr:nth-child(4){
+    /* background:red; */
+    color:#003c8f;
+    font-size: 15px;
+    font-weight: bold;
+}
+#table-4 tr:nth-child(5){
+    /* background:red; */
+    color:#ffd600;
+    /* font-size: 15px; */
+    font-weight: bold;
+} 
+</style>
+<br>
+<div class="row ">
+	<div class="col s12 m8 l4 offset-m2 offset-l4">
+		<div class="card">
+
+			<div class="card-action grey darken-4 white-text">
+				<center><h3>Ludo rank list</h3></center>
+			</div>
+
+			<div class="card-content">
+                <table id="table-4">
+                    <tr>
+                        <th>Rank No.</th>
+                        <th>PlayerName</th>
+                        <th>Matches</th>
+                        <th>Score</th>
+                        <th>Average</th>
+                    </tr>
+                    {%for i in ludo%}
+                    <tr>
+                        <td> {{ forloop.counter }}</td>
+                        <td> {{i.PlayerName}}</td>
+                        <td> {{i.MatchesPlayed}}</td>
+                        <td> {{i.TotalScore}}</td>
+                        <td> {{i.Average}}</td>
+                    </tr>
+                    {% endfor %}
+                    </table>	
+			</div>
+
+		</div>
+	</div>
+</div>
+
+    
+{% endblock %}
+
+
+
+
+
+
+

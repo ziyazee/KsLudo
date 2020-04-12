@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<br>
+<div class="row ">
+	<div class="col s12 m8 l4 offset-m2 offset-l4">
+		<div class="card">
+
+			<div class="card-action grey darken-4 white-text">
+				<center><h3>Ludo matches list</h3></center>
+			</div>
+
+			<div class="card-content">
+                <table id="table-4">
+                    <tr>
+                        <th>No.</th>
+                        <th>Winner</th>
+                        <th>Runner-up</th>
+                        <th>Third</th>
+                        <th>Fourth</th>
+                    </tr>
+                    {%for i in hist%}
+                    <tr>
+                        <td> {{ forloop.counter }}</td>
+                        <td> {{i.First}}</td>
+                        <td> {{i.Second}}</td>
+                        <td> {{i.Third}}</td>
+                        <td> {{i.Fourth}}</td>
+                    </tr>
+                    {% endfor %}
+                    </table>	
+			</div>
+
+		</div>
+	</div>
+</div>
+
+    
+{% endblock %}
+
+
+
+
+
+
+
