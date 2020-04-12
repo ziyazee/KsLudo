@@ -5,7 +5,7 @@ class Ludo(models.Model):
     PlayerName=models.CharField(max_length=50)
     MatchesPlayed=models.IntegerField()
     TotalScore=models.IntegerField()
-    Average=models.IntegerField()
+    Average=models.FloatField()
 
 
 class History(models.Model):

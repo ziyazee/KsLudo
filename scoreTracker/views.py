@@ -55,8 +55,8 @@ def addMatch(request):
         form = PostForm(request.POST)
         print(PostForm)
         if form.is_valid():
-            savit(form['First'].value(),10)
-            savit(form['Second'].value(),5)
+            savit(form['First'].value(),100)
+            savit(form['Second'].value(),50)
             savit(form['Third'].value(),0)
             savit(form['Fourth'].value(),0)
             form.save()

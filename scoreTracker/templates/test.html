@@ -49,10 +49,10 @@
                     {%for i in ludo%}
                     <tr>
                         <td> {{ forloop.counter }}</td>
-                        <td> {{i.PlayerName}}</td>
+                        <td> {{i.PlayerName|title}}</td>
                         <td> {{i.MatchesPlayed}}</td>
                         <td> {{i.TotalScore}}</td>
-                        <td> {{i.Average}}</td>
+                        <td> {{i.Average|floatformat:2 }}</td>
                     </tr>
                     {% endfor %}
                     </table>	
